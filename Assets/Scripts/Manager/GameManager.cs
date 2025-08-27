@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public GameObject player;
-    public bool gameOver;
+    [HideInInspector] public bool gameOver;
 
     private void Awake()
     {
@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     {
         ScoreManager.Instance.score = 0f;
         SceneManager.LoadScene("GameScene");
+    }
+    public void LoadMenu()
+    {
+        ScoreManager.Instance.score = 0f;
+        SceneManager.LoadScene("MainMenuScene");
     }
 
     public void PauseGame()

@@ -7,6 +7,6 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bestScoreText;
     private void Start()
     {
-        bestScoreText.text = "BestScore\n" + (int)SaveSystem.Instance.GetBestScore();
+        bestScoreText.text = "Best Score\n" + (int)SaveSystem.Instance.GetBestScore();
     }
 }
