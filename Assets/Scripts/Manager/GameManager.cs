@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
+
     private void Update()
     {
         if (gameOver)
