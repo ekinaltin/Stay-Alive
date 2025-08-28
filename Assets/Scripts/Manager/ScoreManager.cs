@@ -1,4 +1,5 @@
 using UnityEngine;
+using static GameManager;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.gameOver)
+        if (GameManager.Instance.gameState == GameState.Running)
         {
             score += Time.deltaTime * (10f + score % 100);
         }

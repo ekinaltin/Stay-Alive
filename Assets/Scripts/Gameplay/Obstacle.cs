@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour
 
         else if (collision.CompareTag("Player"))
         {
-            GameManager.Instance.gameOver = true;
+            GameManager.Instance.gameState = GameManager.GameState.GameOver;
         }
     }
 }

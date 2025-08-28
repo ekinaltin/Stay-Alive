@@ -26,7 +26,7 @@ public class GameSceneUI : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.gameOver)
+        if(GameManager.Instance.gameState == GameManager.GameState.GameOver)
         {
             LoadGameOverPanel();
         }
@@ -46,7 +46,7 @@ public class GameSceneUI : MonoBehaviour
         gameScoreText.gameObject.SetActive(false);
         gameOverScoreText.text = "Score\n" + (int)ScoreManager.Instance.score;
         gameOverBestScoreText.text = "Best Score\n" + (int)ScoreManager.Instance.bestScore;
-        GameManager.Instance.gameOver = false;
+        GameManager.Instance.gameState = GameManager.GameState.NotStarted;
     }
 
     private IEnumerator CountDown()
